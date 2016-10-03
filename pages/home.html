@@ -1,28 +1,30 @@
 
 <form id="cadastro">
 		<div class="form-group">
-			<input type="number" class="form-control" placeholder="Código da Mercadoria">
+			<input type="number" class="form-control" name="cod_merc" ng-model="cod_merc" placeholder="Código da Mercadoria">
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control"  placeholder="Nome da Mercadoria">
+			<input type="text" class="form-control" name="name_merc" ng-model="name_merc" placeholder="Nome da Mercadoria">
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Tipo da Mercadoria">
+			<input type="text" class="form-control" name="tipo_merc" ng-model="tipo_merc" placeholder="Tipo da Mercadoria">
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control"  placeholder="Quantidade">
+			<input type="text" class="form-control" name="quant_merc" ng-model="quant_merc" placeholder="Quantidade">
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Preço...">
+			<input type="text" class="form-control" name="preco_merc" ng-model="preco_merc" placeholder="Preço...">
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control"  placeholder="Tipo de Negócio">
+			<input type="text" class="form-control" name="tipo_neg_merc" ng-model="tipo_neg_merc" placeholder="Tipo de Negócio">
 		</div>
 
-		<button class="btn btn-primary btn-block">Cadastrar</button>
+		<input type="submit" class="btn btn-primary btn-block" ng-click="insertData()" value="Cadastrar Mercadoria">
+
+								<p class="text-success">{{message}}</p>
 </form>

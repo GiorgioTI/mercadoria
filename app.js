@@ -25,9 +25,32 @@
 	});
 
 	// create the controller and inject Angular's $scope
-	scotchApp.controller('mainController', function($scope) {
-		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
+	scotchApp.controller('mainController', function($scope,$http) {
+
+		$scope.insertData = function(){
+			$http.post(
+				"insert.php",
+				{
+					'id_merc':$scope.id_merc,
+					'cod_merc':$scope.cod_merc,
+					'name_merc':$scope.name_merc,
+					'tipo_merc':$scope.tipo_merc,
+					'quant_merc':$scope.quant_merc,
+					'preco_merc':$scope.preco_merc,
+					'tipo_neg_merc':$scope.tipo_neg_merc
+				}
+			).success(function(data){
+				$scope.message = (data);
+
+				$scope.id_merc = null;
+				$scope.cod_merc = null;
+				$scope.name_merc = null;
+				$scope.tipo_merc = null;
+				$scope.quant_merc = null;
+				$scope.preco_merc = null;
+				$scope.tipo_neg_merc = null;
+			});
+		}
 	});
 
 	scotchApp.controller('compraController', function($scope) {
@@ -37,3 +60,6 @@
 	scotchApp.controller('vendeController', function($scope) {
 		$scope.message = 'Contact us! JK. This is just a demo.';
 	});
+
+
+
