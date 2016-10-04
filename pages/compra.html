@@ -1,5 +1,7 @@
-<div class="table-responsive">
-	<table class="table table-hover">
+
+<div ng-controller="compraController" ng-init="displayData()">
+
+	<table class="table table-hover table-responsive">
 		<tr>
 			<th>Cód.</th>
 			<th>Nome</th>
@@ -8,20 +10,16 @@
 			<th>Preço</th>
 			<th>Tipo de Negócio</th>
 		</tr>
-		<tr>
-			<td>100</td>
-			<td>MacBook</td>
-			<td>Informática</td>
-			<td>22</td>
-			<td>4.000,00</td>
-			<td>Compra</td>
-			<td>
-				<button class="btn btn-primary">Alterar</button>
-				<button class="btn btn-danger">Excluir</button>
-
-			</td>
+		<tr ng-repeat="x in mercadoria">
+			<td>{{x.cod_merc}}</td>
+			<td>{{x.name_merc}}</td>
+			<td>{{x.tipo_merc}}</td>
+			<td>{{x.quant_merc}}</td>
+			<td>{{x.preco_merc}}</td>
+			<td>{{x.tipo_neg_merc}}</td>
 		</tr>
 	</table>
 
 
 </div>
+
