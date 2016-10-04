@@ -1,4 +1,4 @@
-
+<div ng-controller="mainController">
 <form id="cadastro">
 		<div class="form-group">
 			<input type="number" class="form-control" name="cod_merc" ng-model="cod_merc" placeholder="Código da Mercadoria">
@@ -9,7 +9,13 @@
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control" name="tipo_merc" ng-model="tipo_merc" placeholder="Tipo da Mercadoria">
+			<select class="form-control " name="tipo_merc" ng-model="tipo_merc" >
+				<option value="" disabled selected>Tipo de Mercadoria</option>
+				<option value="Brinquedos">Brinquedos</option>
+				<option value="Celular">Celular</option>
+				<option value="Informática">Informática</option>
+				<option value="Livros">Livros</option>
+			</select>
 		</div>
 
 		<div class="form-group">
@@ -21,10 +27,17 @@
 		</div>
 
 		<div class="form-group">
-			<input type="text" class="form-control" name="tipo_neg_merc" ng-model="tipo_neg_merc" placeholder="Tipo de Negócio">
+			<select class="form-control " name="tipo_neg_merc" ng-model="tipo_neg_merc" >
+				<option value="" disabled selected>Tipo de Negócio</option>
+				<option value="Compra">Compra</option>
+				<option value="Venda">Venda</option>
+			</select>
 		</div>
 
 		<input type="submit" class="btn btn-primary btn-block" ng-click="insertData()" value="Cadastrar Mercadoria">
+<br>
+								<p class="alert-success text-center">{{message}}</p>
 
-								<p class="text-success">{{message}}</p>
 </form>
+</div>
+</html>

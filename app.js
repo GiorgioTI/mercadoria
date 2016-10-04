@@ -49,16 +49,27 @@
 				$scope.quant_merc = null;
 				$scope.preco_merc = null;
 				$scope.tipo_neg_merc = null;
+				//$scope.displayData();
 			});
 		}
 	});
 
-	scotchApp.controller('compraController', function($scope) {
-		$scope.message = 'Look! I am an about page.';
+	scotchApp.controller('compraController', function($scope,$http) {
+		$scope.displayData = function(){
+			$http.get("select_c.php")
+				.success(function(data){
+					$scope.mercadoria = data;
+				});
+		}
 	});
 
-	scotchApp.controller('vendeController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
+	scotchApp.controller('vendeController', function($scope,$http) {
+		$scope.displayData = function(){
+			$http.get("select_v.php")
+				.success(function(data){
+					$scope.mercadoria = data;
+				});
+		}
 	});
 
 

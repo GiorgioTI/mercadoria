@@ -15,7 +15,7 @@
 </head>
 
 <!-- define angular controller -->
-<body ng-controller="mainController">
+<body>
 
 <div class="row">
   <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">
