@@ -26,11 +26,14 @@
 
 	// create the controller and inject Angular's $scope
 	scotchApp.controller('mainController', function($scope,$http) {
+		$scope.validarFormulario = function(){
+			console.log($scope.cadastro.$valid);
 
+		}
 		$scope.insertData = function(){
 			$http.post(
 				"insert.php",
-				{
+			{
 					'id_merc':$scope.id_merc,
 					'cod_merc':$scope.cod_merc,
 					'name_merc':$scope.name_merc,
@@ -61,6 +64,7 @@
 					$scope.mercadoria = data;
 				});
 		}
+
 	});
 
 	scotchApp.controller('vendeController', function($scope,$http) {
